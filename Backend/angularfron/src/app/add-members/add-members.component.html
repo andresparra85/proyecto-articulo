@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <h2>Registrar Nuevo Miembro</h2>
+        <form (ngSubmit)="registrarMiembro()">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoMiembro.name" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" [(ngModel)]="nuevoMiembro.lastName" name="apellido" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="nuevoMiembro.email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefono" [(ngModel)]="nuevoMiembro.phone" name="telefono" required>
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa:</label>
+            <input type="text" class="form-control" id="empresa" [(ngModel)]="nuevoMiembro.company" name="empresa" required>
+          </div>
+          <hr>
+        </form>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="button" class="btn btn-success" routerLink="/show-members">Ver miembros</button>
+      </div>
+      
+</div>
