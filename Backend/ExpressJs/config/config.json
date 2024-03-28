@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "thqnasme",
+    "password": "AhZnODSRZcFOimYzDFhMcX1Ey1u0Emqu",
+    "database": "thqnasme",
+    "host": "salt.db.elephantsql.com",
+    "dialect": "postgres",
+    "port":"5432"
+  },
+  "test": {
+    "username": "thqnasme",
+    "password": "AhZnODSRZcFOimYzDFhMcX1Ey1u0Emqu",
+    "database": "thqnasme",
+    "host": "salt.db.elephantsql.com",
+    "dialect": "postgres"
+    ,"port":"5432"
+  },
+  "production": {
+    "username": "thqnasme",
+    "password": "AhZnODSRZcFOimYzDFhMcX1Ey1u0Emqu",
+    "database": "thqnasme",
+    "host": "salt.db.elephantsql.com",
+    "dialect": "postgres"
+    ,"port":"5432"
+
+  }
+}
+
+
+
