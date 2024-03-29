@@ -59,7 +59,7 @@ export class ShowBookingsComponent implements OnInit {
   refreshBookingsList(): void {
     this.bookingsService.obtenerReservas().subscribe({
       next: (data) => {
-        this.bookings = data; // Asigna la nueva lista de miembros
+        this.bookings = data; 
       },
       error: (err) => {
         console.error(err);

@@ -58,7 +58,7 @@ export class SpacesComponent implements OnInit{
   refreshSpacesList(): void {
     this.spacesService.obtenerEspacios().subscribe({
       next: (data) => {
-        this.espacios = data; // Asigna la nueva lista de miembros
+        this.espacios = data; 
       },
       error: (err) => {
         console.error(err);

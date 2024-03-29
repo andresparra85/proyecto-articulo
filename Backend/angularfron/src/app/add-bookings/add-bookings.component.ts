@@ -52,7 +52,7 @@ export class AddBookingsComponent implements OnInit {
     this.membersService.obtenerMiembros().subscribe({
       next: (data: any) => {
         this.listaMiembros = data;
-        console.log("miembros",this.listaMiembros) // Asigna los miembros obtenidos al arreglo listaMiembros
+        console.log("miembros",this.listaMiembros) 
         console.log(data);
       },
       error: (err) => console.error(err),

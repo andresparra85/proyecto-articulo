@@ -59,7 +59,7 @@ export class ShowMembersComponent implements OnInit{
   refreshMembersList(): void {
     this.membersService.obtenerMiembros().subscribe({
       next: (data) => {
-        this.miembros = data; // Asigna la nueva lista de miembros
+        this.miembros = data; 
       },
       error: (err) => {
         console.error(err);
