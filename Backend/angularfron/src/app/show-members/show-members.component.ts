@@ -26,12 +26,46 @@ export class ShowMembersComponent implements OnInit{
     private membersService: MembersService
   ) {}
   ngOnInit(): void {
+    this.loadMembers(); 
+
+  }
+
+  loadMembers() {
     this.membersService.obtenerMiembros().subscribe({
       next: (data) => {
         this.miembros = data;
         console.log(data);
       },
-      error: (err) => err,
+      error: (err) => console.error(err),
     });
   }
+
+  deleteMember(memberId: string): void {
+    if (confirm('¿Estás seguro de que quieres eliminar este miembro?')) {
+      this.membersService.eliminarMiembro(memberId).subscribe({
+        next: () => {
+          console.log('Miembro eliminado con éxito.');
+          alert('Miembro eliminado con éxito.');
+          this.refreshMembersList();
+        },
+        error: (err) => {
+          console.error(err);
+          alert('Error al eliminar el miembro. Por favor, inténtalo de nuevo.');
+        }
+      });
+    }
+  }
+  
+  refreshMembersList(): void {
+    this.membersService.obtenerMiembros().subscribe({
+      next: (data) => {
+        this.miembros = data; // Asigna la nueva lista de miembros
+      },
+      error: (err) => {
+        console.error(err);
+        alert('Error al cargar la lista de miembros. Por favor, inténtalo de nuevo.');
+      }
+    });
+  }
+  
 }

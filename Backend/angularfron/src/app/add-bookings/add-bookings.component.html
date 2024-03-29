@@ -1,0 +1,47 @@
+<div class="container">
+    <div>
+        <h2>Registrar Nueva reserva</h2>
+        <form (ngSubmit)="registrarReserva()" >
+          <div class="form-group">
+            <label for="fecinicio">Fecha de inicio:</label>
+            <input type="date" class="form-control" id="fecinicio" [(ngModel)]="nuevaReserva.startdatetime" name="fecinicio" required>
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" class="form-control" id="estado" [(ngModel)]="nuevaReserva.state" name="estado" required>
+          </div>
+          <div class="form-group">
+            <label for="member">Miembro que reserva:</label>
+            <select class="form-control" id="member" [(ngModel)]="nuevaReserva.id_member" name="member" required>
+              <option value="" disabled selected>Seleccione un miembro</option>
+              <option *ngFor="let miembro of listaMiembros" [value]="miembro.id_member">{{ miembro.id_member}} : {{ miembro.name }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="space">Espacio a reservar:</label>
+            <select class="form-control" id="space" [(ngModel)]="nuevaReserva.id_space" name="space" required>
+              <option value="" disabled selected>Seleccione un espacio</option>
+              <option *ngFor="let espacio of listaEspacios" [value]="espacio.id_space">{{ espacio.id_space}} : {{ espacio.spacename }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fecfin">Fecha de finalización:</label>
+            <input type="date" class="form-control" id="fecfin" [(ngModel)]="nuevaReserva.endDate" name="fecfin" required>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between align-items-center"> <!-- Contenedor para los botones -->
+            <div>
+              <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+            <div> <!-- Contenedor para el botón adicional con el icono -->
+              <button type="button" class="btn btn-outline-success" routerLink="/home">
+                <i class="bi bi-house-door-fill"></i>
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-warning" routerLink="/show-bookings">Ver Reservas</button>
+            </div>
+          </div>
+        </form>
+      </div>
+</div>

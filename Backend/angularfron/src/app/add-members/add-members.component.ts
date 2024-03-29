@@ -23,23 +23,21 @@ export class AddMembersComponent implements OnInit {
   ) {}
 
   registrarMiembro() {
-    // Lógica para registrar el nuevo miembro
+    
     this.membersService.agregarMiembros(this.nuevoMiembro).subscribe({
       next: (data) => {
         console.log('Miembro registrado exitosamente:', data);
-        alert('Miembro registrado exitosamente.');
-        // Redirigir a la página de detalles del miembro recién registrado
-        //this.router.navigate(['/members', data.id]);
+        alert('¡Miembro registrado exitosamente!');
       },
       error: (err) => {
         console.error('Error al registrar el miembro:', err);
-        // Aquí podrías agregar lógica para manejar errores de registro
       }
     });
   }
+  
 
   ngOnInit(): void {
-    // Puedes inicializar datos adicionales si es necesario
+    
   }
 
 }

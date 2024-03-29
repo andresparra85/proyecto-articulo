@@ -5,12 +5,12 @@ module.exports = sequelize => {
   const attributes = {
     id_space: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       defaultValue: null,
       comment: null,
       primaryKey: true,
       field: "id_space",
-      autoIncrement: false
+      autoIncrement: true
     },
     spacename: {
       type: DataTypes.CHAR(50),
