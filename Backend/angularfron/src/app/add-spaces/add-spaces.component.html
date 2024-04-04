@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+        <h2>Registrar Nuevo Espacio</h2>
+        <form (ngSubmit)="registrarEspacio()" > 
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoEspacio.spacename" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion" [(ngModel)]="nuevoEspacio.description" name="descripcion" required>
+          </div>
+          <div class="form-group">
+            <label for="capacidad">Capacidad:</label>
+            <input type="number" class="form-control" id="capacidad" [(ngModel)]="nuevoEspacio.capacitance" name="capacidad" required>
+          </div>
+          <div class="form-group">
+            <label for="precio">Precio/ H:</label>
+            <input type="number" class="form-control" id="precio" [(ngModel)]="nuevoEspacio.precioporhora" name="precio" required>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between align-items-center"> 
+            <div>
+              <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+            <div> 
+              <button type="button" class="btn btn-outline-success" routerLink="/home">
+                <i class="bi bi-house-door-fill"></i>
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-warning" routerLink="/show-spaces">Ver espacios</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+</div>

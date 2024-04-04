@@ -1,0 +1,41 @@
+<div class="container">
+    <div>
+        <h2>Lista de Espacios disponibles</h2>
+        <table class="table table-striped table-info">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre espacio</th>
+              <th>Descripción</th>
+              <th>Capacidad</th>
+              <th>Precio / Hora</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let espacio of espacios">
+              <td>{{ espacio.id_space }}</td>
+              <td>{{ espacio.spacename }}</td>
+              <td>{{ espacio.description }}</td>
+              <td>{{ espacio.capacitance }}</td>
+              <td>{{ espacio.precioporhora }}</td>
+              <td>
+                <button class="btn btn-info">Editar</button>
+                <button class="btn btn-danger" (click)="deleteSpaces(espacio.id_space)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="d-flex justify-content-between align-items-center"> 
+          <div>
+            <button type="submit" class="btn btn-primary" routerLink="/add-spaces">Registrar</button>
+          </div>
+          <div> 
+            <button type="button" class="btn btn-outline-success" routerLink="/home">
+              <i class="bi bi-house-door-fill"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+</div>
